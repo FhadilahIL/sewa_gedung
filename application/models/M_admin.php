@@ -19,4 +19,15 @@ class M_admin extends CI_Model
     {
         return $this->db->get('user');
     }
+
+    function simpan_data_admin($data)
+    {
+        return $this->db->insert('user', $data);
+    }
+
+    function update_data_my($data, $id_user)
+    {
+        $this->db->where('id_user', $id_user);
+        return $this->db->update('user', $data);
+    }
 }

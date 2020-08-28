@@ -13,4 +13,15 @@ class M_penyewa extends CI_Model
     {
         return $this->db->get('penyewa');
     }
+
+    function simpan_data_penyewa($data)
+    {
+        return $this->db->insert('penyewa', $data);
+    }
+
+    function update_data_penyewa($data, $id_penyewa)
+    {
+        $this->db->where('id_penyewa', $id_penyewa);
+        return $this->db->update('penyewa', $data);
+    }
 }

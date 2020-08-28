@@ -51,17 +51,24 @@
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="<?= base_url('/') ?>assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle" width="40">
+                        <img src="<?= base_url('/') ?>assets/img/profile/user.svg" alt="user" class="rounded" width="30">
                         <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span>
                             <span class="text-dark"><?= $user->nama ?></span>
                             <i data-feather="chevron-down" class="svg-icon"></i>
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                        <a class="dropdown-item" href="<?= base_url('admin/my_profile') ?>">
-                            <i data-feather="user" class="svg-icon mr-2 ml-1"></i>
-                            My Profile
-                        </a>
+                        <?php if ($this->session->userdata('role') == 'Admin') { ?>
+                            <a class="dropdown-item" href="<?= base_url('admin/my_profile') ?>">
+                                <i data-feather="user" class="svg-icon mr-2 ml-1"></i>
+                                My Profile
+                            </a>
+                        <?php } else if ($this->session->userdata('role') == 'Penyewa') { ?>
+                            <a class="dropdown-item" href="<?= base_url('penyewa/my_profile') ?>">
+                                <i data-feather="user" class="svg-icon mr-2 ml-1"></i>
+                                My Profile
+                            </a>
+                        <?php } ?>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
                             <i data-feather="power" class="svg-icon mr-2 ml-1"></i>

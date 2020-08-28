@@ -38,6 +38,7 @@
 <script src="<?= base_url('/') ?>assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
 <script src="<?= base_url('/') ?>assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
 <script src="<?= base_url('/') ?>assets/js/pages/dashboards/dashboard1.min.js"></script>
+<script src="<?= base_url('/') ?>assets/js/main.js"></script>
 
 </body>
 
